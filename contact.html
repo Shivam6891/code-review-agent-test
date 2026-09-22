@@ -10,15 +10,15 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f2f2f2;   /* FIXED: light background */
+      background-color: #1a1a1a;   /* ISSUE 1: dark background */
       margin: 0;
     }
     .contact-box {
-      background: white;           /* FIXED: light background */
-      color: #222;                 /* FIXED: dark readable text */
+      background: #222;            /* ISSUE 1: dark box */
+      color: #333;                 /* ISSUE 1: dark text on dark bg — unreadable */
       padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       width: 320px;
     }
     .contact-box h2 {
@@ -31,7 +31,7 @@
       padding: 10px;
       margin: 8px 0;
       box-sizing: border-box;
-      border: 1px solid #ccc;
+      border: 1px solid #555;
       border-radius: 4px;
       font-family: inherit;
     }
@@ -42,19 +42,8 @@
     .error-msg {
       color: red;
       font-size: 12px;
-      display: block;              /* FIXED: now shows */
+      display: none;               /* ISSUE 2: error message hardcoded hidden */
     }
-    .submit-btn {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    /* NOTE: no .cancel-btn styling — issue 4 not fixed */
   </style>
 </head>
 <body>
@@ -64,8 +53,8 @@
     <input type="email" placeholder="Your Email">
     <textarea placeholder="Your Message"></textarea>
     <p class="error-msg">Please fill out all fields.</p>
-    <button type="submit" class="submit-btn">Send</button>
-    <!-- Still no cancel/close button -->
+    <!-- ISSUE 3: no submit button -->
+    <!-- ISSUE 4: no cancel/close button -->
   </div>
 </body>
 </html>
