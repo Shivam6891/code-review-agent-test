@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1a1a1a;   /* ISSUE 1: too dark, hard to read */
+      margin: 0;
+    }
+    .contact-box {
+      background: #222;            /* ISSUE 1 continued: dark-on-dark */
+      color: #333;                 /* ISSUE 1 continued: dark text on dark bg */
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      width: 320px;
+    }
+    .contact-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .contact-box input,
+    .contact-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    .contact-box textarea {
+      height: 80px;
+      resize: none;
+    }
+    .error-msg {
+      color: red;
+      font-size: 12px;
+      display: none;               /* ISSUE 2: error message never shows */
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-box">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <p class="error-msg">Please fill out all fields.</p>
+    <!-- ISSUE 3: no submit button -->
+    <!-- ISSUE 4: no way to close/cancel the form -->
+  </div>
+</body>
+</html>
