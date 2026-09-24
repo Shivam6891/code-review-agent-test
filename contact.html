@@ -58,6 +58,10 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    .submit-btn:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
     .cancel-btn {
       flex: 1;
       padding: 10px;
@@ -88,12 +92,22 @@
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
       const errorMsg = document.getElementById('errorMsg');
+      const submitBtn = document.querySelector('.submit-btn');
 
       if (!name || !email || !message) {
         errorMsg.style.display = 'block';
       } else {
         errorMsg.style.display = 'none';
-        // form would submit here
+        // Disable button and show submitting state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        // Simulate form submission (replace with actual submission code)
+        setTimeout(() => {
+          // Re-enable button on completion/failure
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send';
+        }, 2000);
       }
     }
   </script>
